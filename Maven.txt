@@ -1,0 +1,136 @@
+MAVEN
+-------------------------
+==> Introduction to Build Tools
+Maven is a build tool that is used to create the initial project folder structure to develop the source code of the application.
+Based on the programming language, we have different build tools;
+	Java			-----> Maven
+	Python		-----> PyBuilder
+	Ruby		-----> Rakes
+	.NET		-----> MS Build
+
+Other build tools;
+ant, gradle...
+
+Project (Netflix)	-----> Developers will write the source code of the application
+
+Maven is used for the projects which are developed by using Java Programming Language (JPL)
+Maven is also known as Java Build Tool
+Maven is an opensource and free tool
+
+==> Features of Maven
+1. Using Maven we can create the initial project folder structure
+
+2. Using Maven we can download the dependencies that are required to develop the application
+
+What is a dependency?
+Chicken Biryani ----> Chicken (Main ingredient); Rice, Masala items..... (Additional ingredients)
+Netflix	-----> Java; Frameworks (Dependencies)
+
+How maven will download the dependencies?
+When we create a project folder structure using maven, we will get 2 things inside that folder structure.
+	1. "src" folder		----> contains source code of the application
+	2. "pom.xml" file	----> is the place we configure the dependencies required to develop the application
+
+POM - Project Object Model
+XML - Extension Markup Language
+
+3. Using Maven we can compile the source code of the application
+All java files will have an extension as <FileName>.java
+.java files consists of source code of the application. This code is in human readable format
+Machines cannot understand our language - machines can only understand binary language (0s and 1s)
+We need to convert the human understandable language to machine understandable language
+The process of converting the human understandable language into machine understandable language is known as COMPILATION
+Using maven we can do the compilation
+Once the code is compiled, we can deploy that code
+
+				compile							execute
+	.java file ----------------------------------> .class file -------------------------------------> JVM ----------------------------> Output
+
+
+4. When we have multiple .java files, using maven we can package all the .java files. Once after packaging, we can compile them directly - PACKAGING
+In realtime, using java we can develop two major types of applications;
+	1. Standalone Applications	-----> .jar file	(Java Archive)
+	2. Web Applications		-----> .war file	(Web Archive)
+	3. Enterprise Applications	-----> .ear file	(Enterprise Archive)
+
+These packaging types are called as ARTIFACTS
+Artifacts can be stored in an artifact repo tools such as Nexus, JFrog.
+In AWS we can store in S3 bucket
+
+==> Introduction to Maven
+Maven is developed by using Java Programming Language
+Maven is also known as Java Build Tool
+If you want to work with Maven, we need to install JAVA in our machines
+Maven is developed by Apache organization
+
+yum install maven -y (Linux)
+apt install maven -y (Ubuntu)
+The above commands will automatically install java in the machine
+
+==> Download and install Java and Maven
+https://www.oracle.com/in/java/technologies/downloads/#jdk21-windows
+
+Configuration of Java
+JAVA_HOME
+JAVA PATH
+
+Configuration of Maven
+MAVEN_HOME
+MAVEN PATH
+
+==> Creation of Standalone Application
+mvn archetype:generate -DgroupId=com.example.app -DartifactId=my-standalone-app -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+
+==> Creation of Web Application
+mvn archetype:generate -DgroupId=com.example.web -DartifactId=my-web-app -DarchetypeArtifactId=maven-archetype-webapp -DinteractiveMode=false
+
+==> How to configure dependencies in the pom.xml file?
+www.mvnrepository.com -----> where you can find depedencies
+
+==> How maven will download these dependencies?
+Types of maven repositories;
+	1. Local repo		---- will be available in the local laptop
+	2. Central repo	---- mvnrepository.com
+	3. Remote repo	---- Nexus/JFrog
+
+==> Maven Goals
+All maven goals will start with "mvn"
+1. Clean - mvn clean*
+It will delete the existing target folder and its contents
+
+2. Compile - mvn compile*
+It will compile the source code of the application (.java ----> .class)
+It will create the TARGET folder inside which .class files will be available
+
+3. Test - mvn test
+It will perform the unit test execution of the source code
+
+4. Package - mvn package*
+This goal will generate the artifact, inside a "TARGET" folder
+
+5. Install - mvn install
+To install the project as a dependency  in the local repo
+
+Note: Whenever developer updates the code, as a DevOps engineer, we need to generate a new artifact. This artifact has to be deployed into the servers.
+
+Note: All maven goals should be execute from the path where "pom.xml" file is available
+
+==> Understanding POM.XML File
+
+
+Projects to Practice;
+https://github.com/KastroVKiran/Netflix-Pipeline-Project.git
+https://github.com/KastroVKiran/tomcat-app-kastro.git
+https://github.com/KastroVKiran/Hotstar-App.git
+
+
+
+
+
+
+
+
+
+
+
+
